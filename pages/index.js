@@ -1,5 +1,6 @@
 import Landing from "/components/landing.jsx";
 import Dashboard from "/components/dashboard.jsx";
+import Names from "/components/names.jsx";
 
 import { useState } from "react";
 
@@ -10,7 +11,10 @@ export default function Home() {
     setSignedIn(!isSignedIn);
   }
 
-  const data = {"name":"John", "name":"Julie", "name":"Hoover", "name":"Club", "name":"Megan", "name":"Lily"}
+  const data = ["John", "Julie", "Hoover", "Club", "Megan", "Lily"]
+  const nameData = data.map((name) =>
+      <Names name={name} />
+    )
 
   return (
     <main>
@@ -22,6 +26,7 @@ export default function Home() {
       <button onClick={signInAndOut}>
         {isSignedIn ? "Sign Out" : "Sign In"}
       </button>
+      {nameData}
     </main>
   );
 }
