@@ -14,7 +14,11 @@ export default function Home() {
 
   return (
     <main>
-      {isSignedIn ? <Dashboard></Dashboard> : <Landing></Landing>}
+      {
+        isSignedIn ?
+        <Dashboard content="This is the dashboard" />
+        : <Landing content="This is the Landing" />
+      }
       <button onClick={signInAndOut}>
         {isSignedIn ? "Sign Out" : "Sign In"}
       </button>
