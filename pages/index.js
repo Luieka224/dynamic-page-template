@@ -3,7 +3,7 @@ import Dashboard from '/components/dashboard.jsx'
 
 import { useState } from 'react'
 
-export default function Home() {
+function Home() {
   const [isSignedIn, setSignedIn] = useState(false)
 
   function signInAndOut() {
@@ -14,8 +14,8 @@ export default function Home() {
     <main>
         {
           isSignedIn
-          ? <Dashboard></Dashboard>
-          : <Landing></Landing>
+          ? <Dashboard content="Currently in Dashboard" />
+          : <Landing content = "Currently in Landing "/>
         }
         <button onClick={signInAndOut}>
           {
@@ -27,3 +27,5 @@ export default function Home() {
     </main>
   )
 }
+
+export default Home;
