@@ -10,6 +10,8 @@ function Home() {
     setSignedIn(!isSignedIn)
   }
 
+  const data = {"name":"John", "name":"Julie", "name":"Hoover", "name":"Club", "name":"Megan", "name":"Lily"}
+
   return (
     <main>
         {
